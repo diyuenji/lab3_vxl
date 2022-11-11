@@ -1,0 +1,6 @@
+traffic.c:9:6:setLEDRED1	8	static
+traffic.c:14:6:setLEDGREEN1	8	static
+traffic.c:19:6:setLEDYELLOW1	8	static
+traffic.c:24:6:setLEDRED2	8	static
+traffic.c:29:6:setLEDGREEN2	8	static
+traffic.c:34:6:setLEDYELLOW2	8	static

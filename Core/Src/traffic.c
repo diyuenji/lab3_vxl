@@ -1,0 +1,40 @@
+/*
+ * trafic.c
+ *
+ *  Created on: Nov 1, 2022
+ *      Author: Admin
+ */
+#include"traffic.h"
+
+void setLEDRED1(){
+	HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, 0);
+	HAL_GPIO_WritePin(LED_YELLOW1_GPIO_Port, LED_YELLOW1_Pin, 1);
+	HAL_GPIO_WritePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin, 1);
+}
+void setLEDGREEN1(){
+	HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, 1);
+	HAL_GPIO_WritePin(LED_YELLOW1_GPIO_Port, LED_YELLOW1_Pin, 1);
+	HAL_GPIO_WritePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin, 0);
+}
+void setLEDYELLOW1(){
+	HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, 1);
+	HAL_GPIO_WritePin(LED_YELLOW1_GPIO_Port, LED_YELLOW1_Pin, 0);
+	HAL_GPIO_WritePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin, 1);
+}
+void setLEDRED2(){
+	HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, 0);
+	HAL_GPIO_WritePin(LED_YELLOW2_GPIO_Port, LED_YELLOW2_Pin, 1);
+	HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, 1);
+}
+void setLEDGREEN2(){
+	HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, 1);
+	HAL_GPIO_WritePin(LED_YELLOW2_GPIO_Port, LED_YELLOW2_Pin, 1);
+	HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, 0);
+}
+void setLEDYELLOW2(){
+	HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, 1);
+	HAL_GPIO_WritePin(LED_YELLOW2_GPIO_Port, LED_YELLOW2_Pin, 0);
+	HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, 1);
+}
+
+

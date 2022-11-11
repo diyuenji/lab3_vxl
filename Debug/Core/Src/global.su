@@ -1,0 +1,4 @@
+global.c:21:6:display7Seg1	16	static
+global.c:119:6:display7Seg2	16	static
+global.c:217:6:update7SEG	16	static
+global.c:235:6:updateBuffer	16	static
