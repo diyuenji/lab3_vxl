@@ -10,22 +10,19 @@
 
 void fsm_automatic_run(){
 
-	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 0);
-	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 0);
-	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 0);
-	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 0);
+
 	fsm_auto1_run();
 	fsm_auto2_run();
-	if(timer3_flag==1&&key1==1&&key2==1){
-		display7Seg2(count2);
+	/*if(timer3_flag==1&&key1==1&&key2==1){
 		display7Seg1(count1);
+		display7Seg2(count2);
 
 		count1--;
 		count2--;
 		key1=0;
 		key2=0;
 		setTimer3(time*2);
-				}
+				}*/
 
 
 
@@ -42,8 +39,8 @@ void fsm_auto1_run(){
 			display7Seg1(count1);
 			count1--;
 
-			setTimer3(100);
-			key1=1;
+			setTimer3(time*2);
+			//key1=1;
 			setTimer1(red_val*time*2);
 			break;
 		case AUTO_RED:
@@ -51,12 +48,17 @@ void fsm_auto1_run(){
 			if(timer1_flag==1){
 					count1=green_val;
 					status1=AUTO_GREEN;
-					key1=1;
+					//key1=1;
 					setTimer1(green_val*time*2);
 
 
 			}
-			key1=1;
+			//key1=1;
+			else if(timer3_flag==1){
+					display7Seg1(count1);
+					count1--;
+					setTimer3(time*2);
+			}
 			break;
 		case AUTO_GREEN:
 			setLEDGREEN1();
@@ -66,7 +68,11 @@ void fsm_auto1_run(){
 				key1=1;
 				setTimer1(yellow_val*time*2);
 			}
-			key1=1;
+			else if(timer3_flag==1){
+				display7Seg1(count1);
+				count1--;
+				setTimer3(time*2);
+			}
 			break;
 		case AUTO_YELLOW:
 			setLEDYELLOW1();
@@ -77,7 +83,11 @@ void fsm_auto1_run(){
 				setTimer1(red_val*time*2);
 
 			}
-			key1=1;
+			else if(timer3_flag==1){
+				display7Seg1(count1);
+				count1--;
+				setTimer3(time*2);
+			}
 			break;
 		default:
 			break;
@@ -95,6 +105,7 @@ void fsm_auto2_run(){
 			display7Seg2(count2);
 			count2--;
 			setTimer2(green_val*time*2);
+			setTimer4(time*2);
 			key2=1;
 			break;
 		case AUTO_RED:
@@ -106,7 +117,11 @@ void fsm_auto2_run(){
 				setTimer2(green_val*time*2);
 
 			}
-			key2=1;
+			else if(timer4_flag==1){
+				display7Seg2(count2);
+				count2--;
+				setTimer4(time*2);
+			}
 			break;
 		case AUTO_GREEN:
 			setLEDGREEN2();
@@ -116,7 +131,11 @@ void fsm_auto2_run(){
 				key2=1;
 				setTimer2(yellow_val*time*2);
 			}
-			key2=1;
+			else if(timer4_flag==1){
+				display7Seg2(count2);
+				count2--;
+				setTimer4(time*2);
+			}
 			break;
 		case AUTO_YELLOW:
 			setLEDYELLOW2();
@@ -126,7 +145,11 @@ void fsm_auto2_run(){
 				key2=1;
 				setTimer2(red_val*time*2);
 			}
-			key2=1;
+			else if(timer4_flag==1){
+				display7Seg2(count2);
+				count2--;
+				setTimer4(time*2);
+			}
 			break;
 		default:
 			break;

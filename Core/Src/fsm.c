@@ -19,6 +19,10 @@ int GREEN_INC=0;
 void fsm(){
 	switch(mode){
 		case 0:
+			HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, 0);
+			HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, 0);
+			HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, 0);
+			HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, 0);
 			fsm_automatic_run();
 			if(isButton1Pressed()){
 					setTimer1(time);
